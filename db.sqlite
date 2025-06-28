@@ -1,0 +1,31 @@
+CREATE TABLE cadastro (
+    numero INTEGER PRIMARY KEY CHECK (numero > 0), 
+    texto TEXT NOT NULL
+);
+
+
+CREATE TABLE log_operacoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    operacao TEXT NOT NULL,
+    data_hora TEXT DEFAULT (datetime('now', 'localtime')),
+    numero INTEGER
+);
+
+
+CREATE TRIGGER log_insert
+AFTER INSERT ON cadastro
+BEGIN
+    INSERT INTO log_operacoes (operacao, numero) VALUES ('INSERT', NEW.numero);
+END;
+
+CREATE TRIGGER log_update
+AFTER UPDATE ON cadastro
+BEGIN
+    INSERT INTO log_operacoes (operacao, numero) VALUES ('UPDATE', NEW.numero);
+END;
+
+CREATE TRIGGER log_delete
+AFTER DELETE ON cadastro
+BEGIN
+    INSERT INTO log_operacoes (operacao, numero) VALUES ('DELETE', OLD.numero);
+END;
