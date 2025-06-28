@@ -1,16 +1,11 @@
-# teste2flutter
+# teste de desenvolvimento 2
 
-A new Flutter project.
+para esse teste, baixei o flutter e o sqlite
 
-## Getting Started
+## Como abrir o sistema?
 
-This project is a starting point for a Flutter application.
+1- entrar na pasta /executavel
 
-A few resources to get you started if this is your first Flutter project:
+2- o "teste2flutter.exe" é o executavel já compilado
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+obs: no codigo main (unico modificado) já tem um tratamento para caso o banco não esteja criado, então quando rodar o executavel já ira criar o banco automáticamente.
